@@ -72,13 +72,13 @@ export function Testimonials() {
         {/* Ana testimonyal kartı */}
         <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1.8fr]">
           {/* Sol — Marka listesi */}
-          <div className="flex flex-row gap-3 lg:flex-col">
+          <div className="flex flex-row lg:flex-col gap-3 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide">
             {testimonials.map((t, i) => (
               <button
                 key={t.brand}
                 onClick={() => setActive(i)}
                 className={cn(
-                  "group flex-1 lg:flex-none relative overflow-hidden rounded-2xl border p-4 lg:p-5 text-left transition-all duration-300",
+                  "group flex-shrink-0 lg:flex-none relative overflow-hidden rounded-2xl border p-4 lg:p-5 text-left transition-all duration-300 min-w-[140px] lg:min-w-0",
                   i === active
                     ? "border-[var(--gold)]/40 bg-[var(--primary)] shadow-lg shadow-[var(--primary)]/20"
                     : "border-[var(--border)] bg-white hover:border-[var(--gold)]/20 hover:shadow-sm"
@@ -109,13 +109,13 @@ export function Testimonials() {
                       )}
                     >
                       <MapPin className="h-3 w-3 flex-shrink-0" />
-                      <span className="hidden lg:inline">{t.location}</span>
+                      {t.location}
                     </p>
                   </div>
                 </div>
                 {/* Aktif göstergesi */}
                 {i === active && (
-                  <div className="absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-[var(--gold)]" />
+                  <div className="absolute left-0 top-1/2 h-8 w-1 -translate-y-1/2 rounded-r-full bg-[var(--gold)] hidden lg:block" />
                 )}
               </button>
             ))}
