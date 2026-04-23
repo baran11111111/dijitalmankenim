@@ -29,14 +29,14 @@ export function Hero() {
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 py-24 lg:py-0">
 
         {/* Sol — Metin */}
-        <div className="z-10 animate-[slide-up_0.7s_cubic-bezier(0.22,1,0.36,1)_both]">
+        <div className="z-10 animate-[slide-up_0.7s_cubic-bezier(0.22,1,0.36,1)_both] text-center lg:text-left">
           {/* Badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-xs sm:text-sm font-medium text-white/80 backdrop-blur-sm">
             <Sparkles className="h-3.5 w-3.5 text-[var(--gold)]" />
-            Yapay Zeka Destekli Manken Fotoğrafçılığı
+            AI Destekli Sanal Manken
           </div>
 
-          <h1 className="text-5xl font-bold leading-[1.08] text-white sm:text-6xl xl:text-7xl">
+          <h1 className="text-4xl font-bold leading-[1.1] text-white sm:text-6xl xl:text-7xl">
             Ürününüzü
             <br />
             <span className="text-gold-gradient">gerçek mankende</span>
@@ -51,14 +51,15 @@ export function Hero() {
           </p>
 
           {/* Instagram CTA */}
-          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:items-center lg:justify-start">
             <a
               href={`https://www.instagram.com/${INSTAGRAM_USERNAME}/`}
               target="_blank"
               rel="noopener noreferrer"
+              className="w-full sm:w-auto"
               id="hero-cta-instagram"
             >
-              <button className="group inline-flex items-center gap-3 rounded-2xl px-7 py-3.5 text-sm font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-pink-500/30"
+              <button className="group flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-3.5 text-sm font-bold text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-pink-500/30"
                 style={{
                   background: "linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
                   boxShadow: "0 8px 32px rgba(220,39,67,0.35)"
@@ -67,10 +68,10 @@ export function Hero() {
                 Instagram'dan Ulaş
               </button>
             </a>
-            <a href="#nasil-calisir">
+            <a href="#nasil-calisir" className="w-full sm:w-auto">
               <button
                 id="hero-cta-secondary"
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-medium text-white/80 backdrop-blur-sm transition-all duration-200 hover:bg-white/10 hover:text-white"
+                className="flex w-full items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-medium text-white/80 backdrop-blur-sm transition-all duration-200 hover:bg-white/10 hover:text-white"
               >
                 Nasıl Çalışır?
               </button>
@@ -82,15 +83,15 @@ export function Hero() {
           </p>
 
           {/* İstatistikler */}
-          <div className="mt-10 flex flex-wrap gap-8 border-t border-white/10 pt-8">
+          <div className="mt-10 flex items-center justify-center lg:justify-start gap-8 border-t border-white/10 pt-8">
             {[
-              { label: "Mutlu Müşteri", value: "500+" },
-              { label: "Teslimat Süresi", value: "48s" },
-              { label: "Memnuniyet", value: "4.9★" },
+              { label: "Müşteri", value: "500+" },
+              { label: "Teslimat", value: "48s" },
+              { label: "Puan", value: "4.9★" },
             ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-2xl font-bold text-[var(--gold)]">{stat.value}</p>
-                <p className="mt-0.5 text-xs text-white/50">{stat.label}</p>
+              <div key={stat.label} className="text-center lg:text-left">
+                <p className="text-xl sm:text-2xl font-bold text-[var(--gold)]">{stat.value}</p>
+                <p className="mt-0.5 text-[10px] sm:text-xs text-white/50">{stat.label}</p>
               </div>
             ))}
           </div>

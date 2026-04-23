@@ -15,31 +15,22 @@ const referenceImages = [
 
 export function InstagramSection() {
   return (
-    <section id="iletisim" className="bg-[var(--surface)] py-24 overflow-hidden">
+    <section id="iletisim" className="bg-[var(--surface)] py-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
+        
         {/* Başlık */}
-        <div className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-1.5 text-sm font-semibold text-pink-600">
-            <InstagramGradientIcon size={14} />
-            Hemen Sipariş Ver
+        <div className="mb-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/10 px-4 py-1.5 text-xs font-bold text-[var(--gold-dark)] uppercase tracking-wider mb-4">
+             Fikir Mi Lazım?
           </div>
-          <h2 className="mt-5 text-3xl font-bold text-[var(--text)] sm:text-5xl">
+          <h2 className="text-3xl font-black text-[var(--primary)] sm:text-5xl">
             Instagram&apos;dan bize ulaşın
           </h2>
           <span className="gold-divider" />
-          <p className="mx-auto mt-4 max-w-xl text-[var(--text-secondary)]">
-            Kayıt olmadan, form doldurmadan. Direkt Instagram DM&apos;den ürün fotoğrafınızı
-            gönderin — sizinle hızlıca iletişime geçelim.
-          </p>
         </div>
 
         {/* Ana kart */}
         <div className="relative mx-auto max-w-4xl">
-          {/* Glow bg */}
-          <div className="absolute -inset-2 rounded-[2.5rem] opacity-20 blur-2xl"
-            style={{ background: "linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)" }} />
-
           <div className="relative rounded-3xl border border-white/60 bg-white shadow-2xl overflow-hidden">
             {/* Gradient top bar */}
             <div className="h-1.5 w-full"
