@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Yeni Palet: Koyu Gece Mavisi + Altın Sarısı ── */
+  --color-primary: #0f1629;
+  --color-primary-hover: #1a2540;
+  --color-primary-light: #1e2d4d;
+  --color-primary-50: #f0f2f8;
+
+  --color-gold: #c9a84c;
+  --color-gold-light: #f0d98a;
+  --color-gold-dark: #a07a2a;
+  --color-gold-muted: #c9a84c33;
+
+  --color-accent: #c9a84c;
+  --color-accent-dark: #a07a2a;
+
+  --color-background: #fafbfc;
+  --color-surface: #f2f4f8;
+  --color-surface-elevated: #ffffff;
+
+  --color-text: #0f1629;
+  --color-text-secondary: #4a5568;
+  --color-text-muted: #8896a8;
+  --color-border: #dde3ef;
+  --color-border-light: #eef0f6;
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-footer-bg: #07090f;
+
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.6s cubic-bezier(0.22,1,0.36,1);
+  --animate-slide-in: slide-in 0.5s ease-out;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--rot, 0deg)); }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+@keyframes gold-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(201,168,76,0); }
+}
+
+@keyframes grain {
+  0%,100% { transform: translate(0,0); }
+  10% { transform: translate(-2%,-3%); }
+  30% { transform: translate(3%,-1%); }
+  50% { transform: translate(-1%,2%); }
+  70% { transform: translate(2%,3%); }
+  90% { transform: translate(-3%,1%); }
+}
+
+:root {
+  --primary: #0f1629;
+  --primary-hover: #1a2540;
+  --primary-light: #1e2d4d;
+  --primary-50: #f0f2f8;
+  --gold: #c9a84c;
+  --gold-light: #f0d98a;
+  --gold-dark: #a07a2a;
+  --gold-muted: rgba(201,168,76,0.15);
+  --accent: #c9a84c;
+  --accent-dark: #a07a2a;
+  --background: #fafbfc;
+  --surface: #f2f4f8;
+  --surface-elevated: #ffffff;
+  --text: #0f1629;
+  --text-secondary: #4a5568;
+  --text-muted: #8896a8;
+  --border: #dde3ef;
+  --border-light: #eef0f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Altın gradient vurgu başlığı ── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* Geriye dönük uyumluluk — eski bileşenler hâlâ çalışsın */
+.text-accent-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 60%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section badge */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(201,168,76,0.35);
+  background: rgba(201,168,76,0.08);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gold-dark);
+}
+
+/* Label tag */
+.label-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+
+/* Altın çizgi ayırıcı */
+.gold-divider {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 9999px;
+  margin: 1rem auto;
+}
+
+/* Dark kart */
+.card-dark {
+  background: var(--primary);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: white;
+}
+
+/* Glow butonu */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
+  color: var(--primary);
+  font-weight: 700;
+  animation: gold-pulse 3s ease-in-out infinite;
+}
+
+.btn-gold:hover {
+  filter: brightness(1.08);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
+
+/* Selection */
+::selection {
+  background: rgba(201,168,76,0.25);
+  color: var(--primary);
+}
