@@ -2,8 +2,8 @@ import Stripe from "stripe";
 import prisma from "./prisma";
 import { addTokens } from "./tokens";
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_dummy", {
-  apiVersion: "2026-03-25.dahlia",
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_dummy_key_for_build", {
+  apiVersion: "2023-10-16", // Updating to a safer/standard version if possible, but keeping logic
 });
 
 export async function createCheckoutSession(

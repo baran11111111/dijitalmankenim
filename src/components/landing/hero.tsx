@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sparkles, Star, Instagram } from "lucide-react";
+import { Sparkles, Star } from "lucide-react";
 
 const modelImages = [
   "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&auto=format&fit=crop&q=80",
