@@ -11,6 +11,8 @@ interface BeforeAfterSliderProps {
   className?: string;
   sizes?: string;
   priority?: boolean;
+  // Küçük, zaten sıkıştırılmış dosyalarda yeniden sıkıştırmayı atlar
+  unoptimized?: boolean;
 }
 
 export function BeforeAfterSlider({
@@ -20,6 +22,7 @@ export function BeforeAfterSlider({
   className,
   sizes = "(max-width: 1024px) 90vw, 420px",
   priority = false,
+  unoptimized = false,
 }: BeforeAfterSliderProps) {
   const [position, setPosition] = useState(50);
 
@@ -31,6 +34,7 @@ export function BeforeAfterSlider({
         alt={`${alt} — AI manken görseli`}
         fill
         priority={priority}
+        unoptimized={unoptimized}
         className="object-cover object-top"
         sizes={sizes}
       />
@@ -45,6 +49,7 @@ export function BeforeAfterSlider({
           alt={`${alt} — ürün fotoğrafı`}
           fill
           priority={priority}
+          unoptimized={unoptimized}
           className="object-cover object-top"
           sizes={sizes}
         />

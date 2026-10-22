@@ -22,17 +22,17 @@ export function WorksSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-x-3 gap-y-8 sm:grid-cols-4 sm:gap-x-5">
           {beforeAfterWorks.map((work, i) => (
             <figure key={work.title}>
               <BeforeAfterSlider
                 before={work.before}
                 after={work.after}
                 alt={work.title}
-                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 300px"
+                unoptimized
                 className="aspect-[3/4] rounded-2xl bg-paper-2"
               />
-              <figcaption className="mt-4 flex items-baseline gap-3 border-t border-line pt-3">
+              <figcaption className="mt-3 flex items-baseline gap-2 border-t border-line pt-3 text-sm sm:gap-3 sm:text-base">
                 <span className="font-display text-lg text-stone">0{i + 1}</span>
                 <span className="font-semibold text-ink">{work.title}</span>
               </figcaption>

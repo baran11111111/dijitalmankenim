@@ -19,10 +19,10 @@ export function CtaSection() {
 
         <div className="relative mx-auto hidden h-[420px] w-full max-w-sm lg:block">
           <div className="absolute left-0 top-8 h-80 w-56 -rotate-6 overflow-hidden rounded-2xl border-4 border-cream/90 shadow-2xl">
-            <Image src="/images/once-sonra/kadife-once.jpg" alt="Askıdaki kadife elbise" fill className="object-cover" sizes="224px" />
+            <Image src="/images/examples/example-02.png" alt="Çiçek pazarında AI manken çekimi" fill className="object-cover object-top" sizes="224px" />
           </div>
           <div className="absolute right-0 top-0 h-96 w-64 rotate-3 overflow-hidden rounded-2xl border-4 border-cream shadow-2xl">
-            <Image src="/images/once-sonra/kadife-sonra.jpg" alt="Kadife elbise AI mankende" fill className="object-cover object-top" sizes="256px" />
+            <Image src="/images/examples/example-10.png" alt="Stüdyoda siyah elbiseli AI manken" fill className="object-cover object-top" sizes="256px" />
           </div>
         </div>
       </div>
