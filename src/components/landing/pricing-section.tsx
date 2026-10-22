@@ -1,228 +1,135 @@
-"use client";
-
-import Link from "next/link";
-import { Check, Shield, Zap, Clock, Sparkles } from "lucide-react";
+import { Check, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { INSTAGRAM_DM_URL } from "@/lib/site";
 
 const plans = [
   {
     id: "deneme",
-    name: "Deneme Çekimi",
-    subtitle: "İlk kez denemek isteyenler için",
+    name: "Deneme",
+    subtitle: "Sonucu kendi ürününüzde görün",
     price: 200,
-    unit: "1 Fotoğraf",
-    icon: "📸",
+    unit: "1 fotoğraf",
     popular: false,
-    features: [
-      "1 adet ürün görseli",
-      "Beyaz/gri arka plan seçeneği",
-      "JPG + PNG çıktı",
-    ],
+    features: ["1 manken görseli", "Beyaz veya gri stüdyo zemini", "JPG + PNG çıktı", "48 saatte teslim"],
   },
   {
     id: "standart",
-    name: "Stüdyo Standart",
-    subtitle: "Düzenli içerik üretenler için",
+    name: "Stüdyo",
+    subtitle: "Düzenli ürün yükleyen butikler",
     price: 1000,
-    unit: "10 Fotoğraf",
-    icon: "🏷️",
+    unit: "10 fotoğraf",
     popular: false,
-    features: [
-      "10 adet ürün görseli",
-      "Birden fazla arka plan seçeneği",
-      "JPG + PNG çıktı",
-    ],
+    features: ["10 manken görseli", "Birden fazla zemin seçeneği", "JPG + PNG çıktı", "48 saatte teslim"],
   },
   {
     id: "dinamik",
-    name: "Dinamik Stüdyo",
-    subtitle: "Sosyal medya ve e-ticaret için ideal",
+    name: "Dinamik",
+    subtitle: "Instagram ve e-ticaret için ideal",
     price: 2250,
-    unit: "15 Fotoğraf + 1 Video",
-    icon: "🎬",
+    unit: "15 fotoğraf + 1 video",
     popular: true,
-    features: [
-      "15 adet ürün görseli",
-      "1 adet kısa tanıtım videosu",
-      "JPG + PNG + MP4 çıktı",
-    ],
+    features: ["15 manken görseli", "1 kısa tanıtım videosu", "JPG + PNG + MP4 çıktı", "48 saatte teslim"],
   },
   {
     id: "premium",
-    name: "Premium Prodüksiyon",
-    subtitle: "Büyük koleksiyonlar ve markalar için",
+    name: "Prodüksiyon",
+    subtitle: "Koleksiyonlar ve toptancılar",
     price: 6000,
-    unit: "50 Fotoğraf + 3 Video",
-    icon: "👑",
+    unit: "50 fotoğraf + 3 video",
     popular: false,
-    features: [
-      "50 adet ürün görseli",
-      "3 adet kısa tanıtım videosu",
-    ],
+    features: ["50 manken görseli", "3 kısa tanıtım videosu", "JPG + PNG + MP4 çıktı", "24 saatte teslim"],
   },
 ];
 
-const INSTAGRAM_USERNAME = "dijitalmankenim";
-
 export function PricingSection() {
   return (
-    <section id="fiyatlandirma" className="bg-[var(--background)] py-24">
+    <section id="fiyatlar" className="scroll-mt-20 bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Başlık */}
-        <div className="mb-14 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 bg-[var(--gold)]/8 px-4 py-1.5 text-sm font-semibold text-[var(--gold-dark)]">
-            <Sparkles className="h-3.5 w-3.5 text-[var(--gold)]" />
-            Şeffaf Fiyatlandırma
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p className="eyebrow text-wine">Fiyatlar</p>
+            <h2 className="font-display mt-4 text-5xl leading-[1] text-ink sm:text-6xl">
+              Net fiyat, <em>sürpriz yok.</em>
+            </h2>
           </div>
-          <h2 className="mt-5 text-3xl font-bold text-[var(--text)] sm:text-5xl">
-            İhtiyacınıza uygun paketi seçin
-          </h2>
-          <span className="gold-divider" />
-          <p className="mx-auto mt-4 max-w-xl text-[var(--text-secondary)]">
-            Tüm paketler tek seferlik ödeme. Sipariş sonrası ürün fotoğraflarınızı Instagram üzerinden gönderin.
+          <p className="max-w-md text-stone lg:justify-self-end">
+            Tüm paketler tek seferlik ödemedir ve revizyon hakkı içerir. Hangisinin size
+            uygun olduğundan emin değilseniz DM&apos;den sorun, ücretsiz yönlendirelim.
           </p>
         </div>
 
-        {/* Güvenceler */}
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-6 text-sm text-[var(--text-secondary)]">
-          <span className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-[var(--success)]" /> Güvenli Ödeme
-          </span>
-          <span className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-[var(--gold)]" /> 48 Saat Teslimat
-          </span>
-          <span className="flex items-center gap-2">
-            <Zap className="h-4 w-4 text-[var(--primary)]" /> Anında Onay
-          </span>
-        </div>
-
-        {/* Planlar */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan) => (
-            <div
+            <article
               key={plan.id}
               className={cn(
-                "relative flex flex-col rounded-3xl border p-6 transition-all duration-300",
-                plan.popular
-                  ? "border-[var(--gold)]/40 bg-[var(--primary)] text-white shadow-2xl shadow-[var(--primary)]/30 lg:-translate-y-3"
-                  : "border-[var(--border)] bg-white hover:border-[var(--gold)]/25 hover:shadow-lg"
+                "relative flex flex-col rounded-3xl p-7",
+                plan.popular ? "bg-ink text-cream" : "border border-line bg-cream text-ink"
               )}
             >
-              {/* Popular badge */}
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="btn-gold rounded-full px-5 py-1.5 text-xs font-bold shadow-lg whitespace-nowrap">
-                    ✦ En Popüler
-                  </div>
-                </div>
+                <span className="absolute -top-3 left-7 rounded-full bg-wine px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-cream">
+                  En çok tercih edilen
+                </span>
               )}
 
-              {/* İkon + Plan adı */}
-              <div className="mb-1">
-                <span className="text-3xl">{plan.icon}</span>
-              </div>
-              <h3
-                className={cn(
-                  "mt-2 text-base font-bold leading-tight",
-                  plan.popular ? "text-white" : "text-[var(--text)]"
-                )}
-              >
-                {plan.name}
-              </h3>
-              <p
-                className={cn(
-                  "mt-1 text-xs leading-snug",
-                  plan.popular ? "text-white/55" : "text-[var(--text-muted)]"
-                )}
-              >
+              <h3 className="font-display text-3xl">{plan.name}</h3>
+              <p className={cn("mt-1 text-sm", plan.popular ? "text-cream/60" : "text-stone")}>
                 {plan.subtitle}
               </p>
 
-              {/* Fiyat */}
-              <div className="mt-5">
-                <span
-                  className={cn(
-                    "text-3xl font-extrabold",
-                    plan.popular ? "text-[var(--gold-light)]" : "text-[var(--text)]"
-                  )}
-                >
+              <div className="mt-8 flex items-baseline gap-1.5">
+                <span className="font-display text-6xl leading-none">
                   {plan.price.toLocaleString("tr-TR")}
-                  <span className="text-base font-normal"> TL</span>
                 </span>
-                <div
-                  className={cn(
-                    "mt-1 inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold",
-                    plan.popular
-                      ? "bg-[var(--gold)]/20 text-[var(--gold-light)]"
-                      : "bg-[var(--primary)]/8 text-[var(--primary)]"
-                  )}
-                >
-                  {plan.unit}
-                </div>
+                <span className={cn("text-lg", plan.popular ? "text-cream/60" : "text-stone")}>TL</span>
               </div>
+              <p className={cn("mt-2 text-sm font-semibold", plan.popular ? "text-[#e8b4ae]" : "text-wine")}>
+                {plan.unit}
+              </p>
 
-              {/* Divider */}
-              <div
-                className={cn(
-                  "my-5 h-px",
-                  plan.popular ? "bg-white/10" : "bg-[var(--border-light)]"
-                )}
-              />
-
-              {/* Özellikler */}
-              <ul className="flex-1 space-y-2.5 text-sm">
+              <ul className={cn("mt-7 flex-1 space-y-3 border-t pt-6 text-sm", plan.popular ? "border-cream/15" : "border-line")}>
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2">
-                    <div
-                      className={cn(
-                        "mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full",
-                        plan.popular
-                          ? "bg-[var(--gold)]/25 text-[var(--gold)]"
-                          : "bg-[var(--primary)]/10 text-[var(--primary)]"
-                      )}
-                    >
-                      <Check className="h-2.5 w-2.5" />
-                    </div>
-                    <span
-                      className={
-                        plan.popular ? "text-white/75" : "text-[var(--text-secondary)]"
-                      }
-                    >
-                      {feature}
-                    </span>
+                  <li key={feature} className="flex items-start gap-2.5">
+                    <Check className={cn("mt-0.5 h-4 w-4 flex-shrink-0", plan.popular ? "text-[#e8b4ae]" : "text-wine")} />
+                    <span className={plan.popular ? "text-cream/80" : "text-ink/80"}>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* CTA */}
               <a
-                href={`https://instagram.com/${INSTAGRAM_USERNAME}`}
+                href={INSTAGRAM_DM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "mt-6 block w-full rounded-xl py-3 text-center text-sm font-bold transition-all duration-200",
+                  "mt-8 inline-flex items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold transition-colors",
                   plan.popular
-                    ? "btn-gold hover:scale-105"
-                    : "border border-[var(--primary)] bg-transparent text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
+                    ? "bg-cream text-ink hover:bg-white"
+                    : "border border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-cream"
                 )}
               >
-                Sipariş Ver
+                Bu paketi iste
+                <ArrowUpRight className="h-4 w-4" />
               </a>
-            </div>
+            </article>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-[var(--text-muted)]">
-          Daha fazla görsele mi ihtiyacınız var?{" "}
+        <div className="mt-6 flex flex-col gap-4 rounded-3xl border border-dashed border-ink/25 p-7 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-display text-2xl text-ink">Toptancı mısınız ya da her ay yeni ürün mü çıkarıyorsunuz?</p>
+            <p className="mt-1 text-sm text-stone">Yüksek adet ve düzenli çalışma için size özel fiyat çıkaralım.</p>
+          </div>
           <a
-            href={`https://instagram.com/${INSTAGRAM_USERNAME}`}
+            href={INSTAGRAM_DM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-[var(--gold-dark)] underline underline-offset-2 hover:text-[var(--gold)]"
+            className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-cream transition-colors hover:bg-wine"
           >
-            Özel teklif için Instagram'dan yazın →
+            Özel teklif al
+            <ArrowUpRight className="h-4 w-4" />
           </a>
-        </p>
+        </div>
       </div>
     </section>
   );

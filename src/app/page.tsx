@@ -1,29 +1,22 @@
 import { Hero } from "@/components/landing/hero";
-import { InstagramSection } from "@/components/landing/instagram-section";
+import { LookbookStrip } from "@/components/landing/lookbook-strip";
+import { WorksSection } from "@/components/landing/works-section";
 import { HowItWorks } from "@/components/landing/how-it-works";
-import { Testimonials } from "@/components/landing/testimonials";
+import { CompareSection } from "@/components/landing/compare-section";
 import { PricingSection } from "@/components/landing/pricing-section";
+import { Faq } from "@/components/landing/faq";
 import { CtaSection } from "@/components/landing/cta-section";
 
 export default function Home() {
   return (
     <>
-      {/* 1. Hero — açıklama + CTA */}
       <Hero />
-
-      {/* 2. Instagram'dan Ulaş — doğrudan aksiyon */}
-      <InstagramSection />
-
-      {/* 3. Nasıl Çalışır — 3 adım süreci */}
+      <WorksSection />
+      <LookbookStrip />
       <HowItWorks />
-
-      {/* 4. Fiyatlandırma — 4 gerçek paket */}
+      <CompareSection />
       <PricingSection />
-
-      {/* 5. Referanslar — müşteri görüşleri */}
-      <Testimonials />
-
-      {/* 7. CTA + WhatsApp */}
+      <Faq />
       <CtaSection />
     </>
   );
