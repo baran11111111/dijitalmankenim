@@ -1,4 +1,5 @@
 import { Hero } from "@/components/landing/hero";
+import { FilmSection } from "@/components/landing/film-section";
 import { LookbookStrip } from "@/components/landing/lookbook-strip";
 import { WorksSection } from "@/components/landing/works-section";
 import { HowItWorks } from "@/components/landing/how-it-works";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Hero />
       <WorksSection />
+      <FilmSection />
       <LookbookStrip />
       <HowItWorks />
       <CompareSection />

@@ -1,10 +1,11 @@
-import { BeforeAfterSlider } from "@/components/shared/before-after-slider";
+import Image from "next/image";
 import { ContactButtons } from "@/components/shared/contact-buttons";
+import { LoopVideo } from "@/components/shared/loop-video";
 
 const facts = [
   { value: "48 saat", label: "içinde teslim" },
   { value: "200 TL", label: "tek fotoğraftan başlayın" },
-  { value: "Revizyon", label: "her pakete dahil" },
+  { value: "Video", label: "fotoğrafın yanında" },
 ];
 
 export function Hero() {
@@ -26,7 +27,7 @@ export function Hero() {
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-stone">
             Ürününüzün telefonla çektiğiniz fotoğrafını Instagram&apos;dan gönderin.
             Stüdyo, manken ve fotoğrafçı masrafı olmadan, 48 saat içinde satışa hazır
-            manken görselleri teslim edelim.
+            manken fotoğrafları ve videoları teslim edelim.
           </p>
 
           <ContactButtons className="mt-10" />
@@ -41,20 +42,32 @@ export function Hero() {
           </dl>
         </div>
 
-        {/* Önce / sonra */}
+        {/* Video + gönderilen ürün */}
         <figure className="relative mx-auto w-full max-w-md animate-[fade-in_1s_ease-out_0.15s_both] lg:max-w-none">
           <div className="absolute -inset-3 -z-10 rotate-[2.5deg] rounded-[2rem] bg-paper-2" />
-          <BeforeAfterSlider
-            before="/images/once-sonra/tisort-once.jpg"
-            after="/images/once-sonra/tisort-sonra.jpg"
-            alt="Siyah tişört"
-            priority
-            className="aspect-[4/5] rounded-[1.75rem] shadow-[0_30px_80px_-30px_rgba(22,19,15,0.45)]"
-          />
-          <figcaption className="mt-4 flex items-center justify-between text-sm text-stone">
-            <span className="font-display text-lg italic text-ink">Katlanmış tişörtten mankene</span>
-            <span className="eyebrow text-stone/80">← Kaydırın →</span>
-          </figcaption>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-[0_30px_80px_-30px_rgba(22,19,15,0.45)]">
+            <LoopVideo src="/videos/manken-tisort.mp4" poster="/videos/manken-tisort-poster.jpg" />
+            <span className="absolute right-4 top-4 rounded-full bg-wine px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-cream">
+              Teslim ettiğimiz
+            </span>
+          </div>
+
+          {/* Gönderilen ürün fotoğrafı */}
+          <div className="absolute -bottom-6 -left-4 w-32 rotate-[-4deg] rounded-2xl bg-cream p-2 shadow-xl sm:-left-10 sm:w-40">
+            <div className="relative aspect-square overflow-hidden rounded-xl">
+              <Image
+                src="/images/once-sonra/tisort-once.jpg"
+                alt="Müşterinin gönderdiği katlanmış tişört fotoğrafı"
+                fill
+                className="object-cover"
+                sizes="160px"
+                priority
+              />
+            </div>
+            <p className="mt-2 text-center text-[10px] font-bold uppercase tracking-wider text-stone">
+              Gönderdiğiniz
+            </p>
+          </div>
         </figure>
       </div>
     </section>

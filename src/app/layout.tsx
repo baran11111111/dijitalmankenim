@@ -51,10 +51,6 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     type: "website",
   },
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
 };
 
 export const viewport: Viewport = {
