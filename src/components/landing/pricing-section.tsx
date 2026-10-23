@@ -62,6 +62,7 @@ export function PricingSection() {
           {plans.map((plan) => (
             <article
               key={plan.id}
+              data-paket={plan.name}
               className={cn(
                 "relative flex flex-col rounded-3xl p-7",
                 plan.popular ? "bg-ink text-cream" : "border border-line bg-cream text-ink"

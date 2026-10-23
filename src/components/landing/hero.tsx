@@ -10,7 +10,7 @@ const facts = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-paper">
+    <section data-konum="hero" className="relative overflow-hidden bg-paper">
       <div className="paper-grain pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-multiply" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-28 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8 lg:pb-24 lg:pt-36">
@@ -31,6 +31,12 @@ export function Hero() {
           </p>
 
           <ContactButtons className="mt-10" />
+          <a
+            href="#ornek"
+            className="mt-5 inline-block text-sm font-bold text-ink underline decoration-wine decoration-2 underline-offset-4 hover:text-wine"
+          >
+            ya da ücretsiz örnek isteyin →
+          </a>
 
           <dl className="mt-12 grid max-w-xl grid-cols-3 border-t border-line pt-6">
             {facts.map((fact, i) => (

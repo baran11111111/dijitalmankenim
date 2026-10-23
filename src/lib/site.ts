@@ -1,3 +1,6 @@
+// Sitenin asıl adresi (sitemap, paylaşım görselleri ve Google için)
+export const SITE_URL = "https://dijitalmankenim.com.tr";
+
 export const INSTAGRAM_USERNAME = "dijitalmankenim";
 export const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 // Instagram uygulamasında doğrudan DM ekranını açar

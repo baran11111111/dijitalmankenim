@@ -7,6 +7,8 @@ import { CompareSection } from "@/components/landing/compare-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { Faq } from "@/components/landing/faq";
 import { CtaSection } from "@/components/landing/cta-section";
+import { CategoriesSection } from "@/components/landing/categories-section";
+import { SampleSection } from "@/components/landing/sample-section";
 
 export default function Home() {
   return (
@@ -15,9 +17,11 @@ export default function Home() {
       <WorksSection />
       <FilmSection />
       <LookbookStrip />
+      <CategoriesSection />
       <HowItWorks />
       <CompareSection />
       <PricingSection />
+      <SampleSection />
       <Faq />
       <CtaSection />
     </>

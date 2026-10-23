@@ -2,14 +2,16 @@ import { LoopVideo } from "@/components/shared/loop-video";
 import { ContactButtons } from "@/components/shared/contact-buttons";
 
 const films = [
-  { src: "/videos/zumrut-yali.mp4", poster: "/videos/zumrut-yali.jpg", label: "Kadife gece elbisesi · Yalı" },
+  { src: "/videos/tesettur-gunluk.mp4", poster: "/videos/tesettur-gunluk.jpg", label: "Günlük tesettür · Karaköy" },
+  { src: "/videos/erkek-takim.mp4", poster: "/videos/erkek-takim.jpg", label: "Erkek takım · Bebek sahili" },
+  { src: "/videos/cocuk-bahce.mp4", poster: "/videos/cocuk-bahce.jpg", label: "Çocuk giyim · Lavanta bahçesi" },
   { src: "/videos/kapadokya.mp4", poster: "/videos/kapadokya.jpg", label: "İpek abiye · Kapadokya" },
 ];
 
 // Ürün videoları: arka planda dönen sinematik filmler
 export function FilmSection() {
   return (
-    <section className="relative overflow-hidden bg-ink text-cream">
+    <section data-konum="video" className="relative overflow-hidden bg-ink text-cream">
       {/* Arka plan filmi */}
       <div className="absolute inset-0">
         <LoopVideo src="/videos/gelin-dans.mp4" poster="/videos/gelin-dans.jpg" />
@@ -23,12 +25,13 @@ export function FilmSection() {
           Fotoğrafla bitmiyor. <em className="text-[#e8b4ae]">Ürününüz filmde.</em>
         </h2>
         <p className="mt-6 max-w-lg text-lg leading-relaxed text-cream/70">
-          Gelinlikten abiyeye, ürününüzü saray balo salonunda, boğazda ya da Kapadokya&apos;da
-          hareket halinde gösteren kısa videolar. Reels, hikâye ve ürün sayfaları için hazır.
+          Gelinlikten günlük giyime, erkekten çocuğa; ürününüzü balo salonunda, boğazda ya da
+          Kapadokya&apos;da hareket halinde gösteren kısa videolar. Reels, hikâye ve ürün
+          sayfaları için hazır.
         </p>
         <ContactButtons tone="light" className="mt-10" instagramLabel="Video İçin Yazın" />
 
-        <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:ml-auto lg:max-w-3xl">
+        <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {films.map((film) => (
             <figure key={film.src} className="overflow-hidden rounded-2xl border border-cream/15 bg-ink">
               <div className="aspect-video">

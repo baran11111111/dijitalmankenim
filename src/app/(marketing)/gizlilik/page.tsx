@@ -18,8 +18,10 @@ export default function GizlilikPage() {
 
       <h2>Hangi bilgileri alıyoruz?</h2>
       <p>
-        Instagram veya WhatsApp üzerinden bize gönderdiğiniz ürün fotoğrafları, mesajlarınız
-        ve sipariş için gerekli iletişim bilgileriniz.
+        Instagram, WhatsApp veya sitemizdeki ücretsiz örnek formu üzerinden bize gönderdiğiniz
+        ürün fotoğrafları, mesajlarınız ve sipariş için gerekli iletişim bilgileriniz
+        (Instagram kullanıcı adı, telefon). Form ile gönderilen fotoğraflar erişime kapalı bir
+        depolama alanında saklanır.
       </p>
 
       <h2>Ne için kullanıyoruz?</h2>
@@ -32,8 +34,10 @@ export default function GizlilikPage() {
       <h2>Üçüncü taraflar</h2>
       <p>
         Görselleri üretirken yapay zeka hizmet sağlayıcılarından yararlanırız. Mesajlaşma
-        Instagram (Meta) ve WhatsApp altyapısı üzerinden gerçekleşir. Bu web sitesi Vercel
-        üzerinde barındırılır.
+        Instagram (Meta) ve WhatsApp altyapısı üzerinden gerçekleşir. Bu web sitesi ve form
+        ile gönderilen dosyalar Vercel üzerinde barındırılır. Sitenin nasıl kullanıldığını
+        anlamak için kişisel veri içermeyen ziyaret istatistikleri (Vercel Analytics) ve
+        reklam ölçümü için Meta Pixel kullanılabilir.
       </p>
 
       <h2>Haklarınız</h2>

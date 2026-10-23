@@ -3,7 +3,7 @@ import { ContactButtons } from "@/components/shared/contact-buttons";
 
 export function CtaSection() {
   return (
-    <section className="relative overflow-hidden bg-wine text-cream">
+    <section data-konum="son-cta" className="relative overflow-hidden bg-wine text-cream">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
         <div>
           <p className="eyebrow text-cream/60">İlk adım</p>

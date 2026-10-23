@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Logo } from "./logo";
 import { InstagramIcon, WhatsAppIcon } from "./brand-icons";
 import { INSTAGRAM_URL, INSTAGRAM_USERNAME, WHATSAPP_URL } from "@/lib/site";
+import { categories } from "@/lib/categories";
 
 const links = [
   { title: "İşlerimiz", href: "/#isler" },
@@ -27,9 +28,9 @@ export function Footer() {
   if (isDashboard) return null;
 
   return (
-    <footer className="bg-ink pb-28 text-cream sm:pb-0">
+    <footer data-konum="footer" className="bg-ink pb-28 text-cream sm:pb-0">
       <div className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 border-b border-cream/10 pb-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-12 border-b border-cream/10 pb-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Logo variant="light" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/55">
@@ -45,6 +46,19 @@ export function Footer() {
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-cream/70 transition-colors hover:text-cream">
                     {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="eyebrow text-cream/40">Çözümler</p>
+            <ul className="mt-5 space-y-3">
+              {categories.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/cozumler/${c.slug}`} className="text-sm text-cream/70 transition-colors hover:text-cream">
+                    {c.name}
                   </Link>
                 </li>
               ))}

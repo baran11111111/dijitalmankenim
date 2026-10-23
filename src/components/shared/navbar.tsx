@@ -13,6 +13,7 @@ const navLinks = [
   { label: "İşlerimiz", href: "/#isler" },
   { label: "Nasıl Çalışır", href: "/#nasil-calisir" },
   { label: "Fiyatlar", href: "/#fiyatlar" },
+  { label: "Ücretsiz Örnek", href: "/#ornek" },
   { label: "SSS", href: "/#sss" },
 ];
 
@@ -39,9 +40,10 @@ export function Navbar() {
 
   return (
     <header
+      data-konum="menu"
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || mobileOpen
+        scrolled || mobileOpen || pathname !== "/"
           ? "border-b border-line bg-paper/90 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       )}

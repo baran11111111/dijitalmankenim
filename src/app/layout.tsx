@@ -4,6 +4,9 @@ import "./globals.css";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { MobileCta } from "@/components/shared/mobile-cta";
+import { ClickTracker, MetaPixel } from "@/components/shared/tracking";
+import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "@/lib/site";
 
 const playfair = Playfair_Display({
   subsets: ["latin", "latin-ext"],
@@ -35,6 +38,7 @@ const SITE_DESCRIPTION =
   "Askıdaki ürün fotoğrafınızı gönderin, 48 saatte profesyonel AI manken görselleriniz hazır. Butikler, toptancılar ve e-ticaret satıcıları için 200 TL'den başlayan paketler.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Dijital Mankenim — Ürününüz, AI Mankende",
   description: SITE_DESCRIPTION,
   keywords: [
@@ -72,6 +76,9 @@ export default function RootLayout({
         <main className="flex-1 w-full overflow-x-hidden">{children}</main>
         <Footer />
         <MobileCta />
+        <ClickTracker />
+        <MetaPixel />
+        <Analytics />
       </body>
     </html>
   );
